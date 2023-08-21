@@ -65,6 +65,24 @@ signuprouter.post("/login", async (req, res) => {
 
 
 
+signuprouter.get("/getappointments", async (req, res) => {
+
+  // const { email, password, confirm_password } = req.body
+
+  try {
+
+    const user = await apponitmodel.find({})
+    res.status(200).send(user)
+
+    
+  } catch (error) {
+    console.log(error)
+    res.status(500).send("servererror")
+  }
+
+})
+
+
 
 
 signuprouter.post("/appointments", async (req, res) => {

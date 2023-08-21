@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const mongoose=require("mongoose")
 require("dotenv").config()
-const { userRouter } = require("./routes/userroutes")
+const { signuprouter } = require("./routes/Signuproute")
 const cors = require("cors")
 
 
@@ -10,7 +10,12 @@ app.use(express.json())
 app.use(cors({ origin:"*"}))
 
 
-app.use("/user", userRouter)
+app.use("/masaihospital", signuprouter)
+
+app.get('/', (req, res) => {
+    res.send('Welcome to the Homepage !')
+});
+
 
 const connect = async () => {
     try {
@@ -25,9 +30,6 @@ const connect = async () => {
 
 
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the Homepage !')
-});
 
 
 

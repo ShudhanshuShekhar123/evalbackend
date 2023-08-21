@@ -24,16 +24,13 @@ const connect = async () => {
 
 
 
+
 app.get('/', (req, res) => {
     res.send('Welcome to the Homepage !')
 });
 
 
-// app.post('/post', (req, res) => {
-    
 
-
-// });
 
 
 
